@@ -4,14 +4,11 @@ import * as types from '../actions/actionTypes';
 // 'state' is immutable. Not able to modify original state.
 export default function courseReducer(state = [], action) {
     switch (action.type) {
-        case types.CREATE_COURSE:
+        case types.LOAD_COURSES_SUCCESS:
 
             // Return a brand new state array and honer immutable state with spread operator ...state
             //debugger;
-            return [...state,
-                // Create a deep copy of passed in courses
-                Object.assign({}, action.course)
-            ];
+            return action.courses;
 
         //state.push(action.course);
         //return state;

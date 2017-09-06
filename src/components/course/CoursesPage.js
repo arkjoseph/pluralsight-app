@@ -3,36 +3,14 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as courseActions from '../../actions/CourseActions';
-
+import CourseList from './CourseList';
 
 class CoursesPage extends Component {
 
     // Initialize states and bind functions
     constructor(props, context) {
         super(props, context);
-
-        // this.state = {
-        //     course: {title: ""}
-        // };
-
-        // Bind field functions to CoursesPage component
-        // this.onTitleChange = this.onTitleChange.bind(this);
-        // this.onClickSave = this.onClickSave.bind(this);
     }
-
-    // Get value and setState when input field changes
-    // onTitleChange(event) {
-    //     const course = this.state.course;
-    //     course.title = event.target.value;
-    //     this.setState({course: course});
-    // }
-
-    // // OnClick save
-    // onClickSave() {
-    //     //alert(`saving ${this.state.course.title}`);
-    //     // Allow 'connect' to inject a dispatch prop for redux
-    //     this.props.actions.createCourse(this.state.course);
-    // }
 
     courseRow(course, index){
         return <div className="field_title" key={index}>{course.title}</div>;
@@ -40,10 +18,12 @@ class CoursesPage extends Component {
 
     render(){
         //debugger;
+        const {courses} = this.props;
+
         return (
           <div>
               <h1>Courses</h1>
-              {this.props.courses.map(this.courseRow)}
+              <CourseList courses={courses} />
           </div>
         );
     }
