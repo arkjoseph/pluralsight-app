@@ -7,53 +7,43 @@ import * as courseActions from '../../actions/CourseActions';
 
 class CoursesPage extends Component {
 
-    // Initialize states and bind methods
+    // Initialize states and bind functions
     constructor(props, context) {
         super(props, context);
 
-        this.state = {
-            course: {title: ""}
-        };
+        // this.state = {
+        //     course: {title: ""}
+        // };
 
         // Bind field functions to CoursesPage component
-        this.onTitleChange = this.onTitleChange.bind(this);
-        this.onClickSave = this.onClickSave.bind(this);
+        // this.onTitleChange = this.onTitleChange.bind(this);
+        // this.onClickSave = this.onClickSave.bind(this);
     }
 
     // Get value and setState when input field changes
-    onTitleChange(event) {
-        const course = this.state.course;
-        course.title = event.target.value;
-        this.setState({course: course});
-    }
+    // onTitleChange(event) {
+    //     const course = this.state.course;
+    //     course.title = event.target.value;
+    //     this.setState({course: course});
+    // }
 
-    // OnClick save
-    onClickSave() {
-        //alert(`saving ${this.state.course.title}`);
-        // Allow 'connect' to inject a dispatch prop for redux
-        this.props.actions.createCourse(this.state.course);
-    }
+    // // OnClick save
+    // onClickSave() {
+    //     //alert(`saving ${this.state.course.title}`);
+    //     // Allow 'connect' to inject a dispatch prop for redux
+    //     this.props.actions.createCourse(this.state.course);
+    // }
 
     courseRow(course, index){
         return <div className="field_title" key={index}>{course.title}</div>;
     }
+
     render(){
         //debugger;
         return (
           <div>
               <h1>Courses</h1>
               {this.props.courses.map(this.courseRow)}
-              <h2>Add Course</h2>
-              <input
-                type="text"
-                onChange={this.onTitleChange}
-                value={this.state.course.title}
-              />
-              <input
-                type="submit"
-                onClick={this.onClickSave}
-                value="Save"
-              />
           </div>
         );
     }
@@ -83,4 +73,4 @@ function mapDispatchToProps(dispatch){
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps())(CoursesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
