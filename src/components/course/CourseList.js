@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import CourseListRow from './CourseListRow';
 
@@ -7,11 +7,11 @@ const CourseList = ({courses}) => {
       <div>
           <table className="table striped">
               <thead>
-                <td>&nbsp;</td>
-                <td>Title</td>
-                <td>Author</td>
-                <td>Category</td>
-                <td>Length</td>
+                <th>&nbsp;</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Length</th>
               </thead>
               <tbody>
               {courses.map(course =>

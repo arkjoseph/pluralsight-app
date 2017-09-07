@@ -12,10 +12,6 @@ class CoursesPage extends Component {
         super(props, context);
     }
 
-    courseRow(course, index){
-        return <div className="field_title" key={index}>{course.title}</div>;
-    }
-
     render(){
         //debugger;
         const {courses} = this.props;
