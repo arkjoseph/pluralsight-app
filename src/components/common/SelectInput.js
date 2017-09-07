@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-const TextInput = ({name,label,onChange,defaultOption,value,error,options}) => {
+const SelectInput = ({name,label,onChange,defaultOption,value,error,options}) => {
 
     return (
         <div className="form-group">
@@ -25,7 +25,7 @@ const TextInput = ({name,label,onChange,defaultOption,value,error,options}) => {
     );
 }
 
-TextInput.propTypes = {
+SelectInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
@@ -34,4 +34,4 @@ TextInput.propTypes = {
     error: PropTypes.string
 };
 
-export default TextInput;
+export default SelectInput;

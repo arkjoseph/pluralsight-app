@@ -19,8 +19,8 @@ const TextInput = ({name,label,onChange,placeholder,value,error}) => {
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
-                    {error && <div className="alert alert-danger">{error}</div>}
                 />
+                {error && <div className="alert alert-danger">{error}</div>}
             </div>
         </div>
     );
@@ -30,9 +30,10 @@ TextInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string,
+    defaultOption: PropTypes.string,
     value: PropTypes.string,
-    error: PropTypes.string
+    error: PropTypes.string,
+    options: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default TextInput;
