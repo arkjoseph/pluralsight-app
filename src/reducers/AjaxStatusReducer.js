@@ -6,12 +6,13 @@ function actionTypeEndsInSuccess(type) {
 }
 
 export default function ajaxStatusReducer(state = initialState.ajaxCallsInProgress, action) {
-     if (action.type == types.BEGIN_AJAX_CALL){
-         // increment state by 1
-         return state + 1;
-     } else if (actionTypeEndsInSuccess(action.type)) {
-         return state - 1;
-     }
-     return state;
+    debugger;
+    if (action.type == types.BEGIN_AJAX_CALL) {
+        // increment state by 1
+        return state + 1;
+    } else if (actionTypeEndsInSuccess(action.type)) {
+        return state - 1;
+    }
+    return state;
 }
 
