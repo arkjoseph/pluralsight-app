@@ -9,6 +9,8 @@ import {loadCourses} from './actions/CourseActions';
 import {loadAuthors} from './actions/AuthorActions';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/toastr/build/toastr.min.css';
+
 import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();

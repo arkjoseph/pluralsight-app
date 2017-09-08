@@ -1,7 +1,7 @@
-// Define initial states of fields
 
+// Define initial objects
 export default {
     authors: [],
     courses: [],
-    numAjaxCallsInProgress: 0
-}
+    AjaxCallsInProgressCount: 0
+};
